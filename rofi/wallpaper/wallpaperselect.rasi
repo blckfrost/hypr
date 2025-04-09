@@ -1,0 +1,147 @@
+/* config - Wallpaper select */
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                        "drun";
+    font:                        "JetBrains Mono Nerd Font 10";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    hover-select:                true;
+    me-select-entry:             "MouseSecondary";
+    me-accept-entry:             "MousePrimary";
+    window-format:               "{w} · {c} · {t}";
+	dpi:						 1;
+}
+
+/* ---- Global properties ---- */
+@import "~/.config/rofi/shared/colors.rasi"
+
+
+/* ---- Window ---- */
+
+
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       100%;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    enabled:                     true;
+    children:                    [ "listview" ];
+    background-color:            @background;
+}
+
+
+/* ---- Listview ---- */
+listview {
+    enabled:                     true;
+    columns:                     6;
+    lines:                       2;
+    spacing:                     30px;
+    padding:                     20px 30px;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @foreground;
+
+}
+
+/* ---- Element ---- */
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    spacing:                     0px;
+    padding:                     4px;
+    border-radius:               20px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+@media(max-aspect-ratio: 1.8){
+    element{
+        orientation:              vertical;
+    }
+}
+
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            @active;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @selected-text;
+}
+// Adapt rofi theme
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element alternate.urgent {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element alternate.active {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+/* ---- Image Box ---- */
+element-icon {
+    size:                        30%;
+    cursor:                      inherit;
+    expand: false;
+    padding:                     0px;
+    background-color:            inherit;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Adapt rofi theme
+element.alternate.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+textbox {
+    padding:                     15px;
+    margin:                      0px;
+    border-radius:               0px;
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
