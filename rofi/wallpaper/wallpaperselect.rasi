@@ -23,22 +23,22 @@ configuration {
 window {
     enabled:                     true;
     fullscreen:                  false;
-    width:                       100%;
+    width:                       80%;
     transparency:                "real";
     cursor:                      "default";
     spacing:                     0px;
     padding:                     0px;
     border:                      0px;
-    border-radius:               0px;
+    border-radius:               16px;
     border-color:                transparent;
-    background-color:            transparent;
+    background-color:            @background-alpha;
 }
 
 /* ---- Mainbox ---- */
 mainbox {
     enabled:                     true;
     children:                    [ "listview" ];
-    background-color:            @background;
+    background-color:            transparent;
 }
 
 
