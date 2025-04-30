@@ -1,0 +1,29 @@
+{
+    "memory": {
+        "format": " {}%",
+        "interval": 2,
+        "on-click": "btop"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "on-click": "kitty -e htop",
+        "interval": 1
+    },
+
+    "disk": {
+        "format": " ~{}%",
+        "path": "/home/draco"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["disk", "memory", "cpu"]
+    }
+}

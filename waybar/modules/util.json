@@ -1,0 +1,11 @@
+{
+    "custom/lock": {
+        "format": "󰍁 ",
+        "on-click": "hyprlock"
+    },
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "custom/media": {
+        "format": "{icon} {}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": " ",
+            "default": " "
+        },
+        "exec": "~/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl --player spotify play-pause",
+        "on-scroll-up": "playerctl --player spotify next",
+        "on-scroll-down": "playerctl --player spotify next"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} {player_icon} <i>{dynamic}</i>",
+        "max-length": 40,
+        "player-icons": {
+            "default": " ",
+            "mpd": " ",
+            "firefox": " ",
+            "mpv": " ",
+            "spotify": " "
+        },
+        "status-icons": {
+            "playing": " ",
+            "paused": "",
+            "stopped": ""
+        }
+    },
+
+    "custom/spotify": {
+        "exec": "~/.config/waybar/scripts/mediaplayer --player spotify",
+        "format": " {}",
+        "rotate": 0,
+        "return-type": "json",
+        "on-click": "playerctl play-pause --player spotify",
+        "on-click-right": "playerctl next --player spotify",
+        "on-click-middle": "playerctl previous --player spotify",
+        "on-scroll-up": "volumecontrol.sh -p spotify i",
+        "on-scroll-down": "volumecontrol.sh -p spotify d",
+        "max-length": 25,
+        "escape": true,
+        "tooltip": true
+    }
+}
