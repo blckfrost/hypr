@@ -1,7 +1,14 @@
+[config]
+reload_apps = true
+
+[config.reload_apps_list]
+#kitty = true
+gtk_theme = true
+
 [config.wallpaper]
 command = "swww"
 arguments = ["img", "--transition-type", "center"]
-set = true
+set = false
 
 # Hyprland
 [templates.hyprland]
@@ -24,11 +31,11 @@ post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matugen-kitty.conf"
 # GTK
 [templates.gtk3]
 input_path = './templates/matugen-gtk.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
+output_path = '~/.config/gtk-3.0/colors.css'
 
 [templates.gtk4]
 input_path = './templates/matugen-gtk.css'
-output_path = '~/.config/gtk-4.0/gtk.css'
+output_path = '~/.config/gtk-4.0/colors.css'
 
 # Swaync
 [templates.swaync]
@@ -57,3 +64,8 @@ output_path = '~/.config/zathura/matugen-zathurarc'
 [templates.Wlogout]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/wlogout/matugen/matugen-wlogout.css'
+
+# Cava
+[templates.cava]
+input_path = '~/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'
