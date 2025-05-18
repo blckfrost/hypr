@@ -94,6 +94,7 @@ return {
                         luasnip = "[LuaSnip]",
                         nvim_lua = "[Lua]",
                         path = "[Path]",
+                        latex_symbols = "[Latex]",
                     },
                     maxwidth = 40,
                     ellipsis_char = "...",

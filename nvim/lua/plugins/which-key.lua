@@ -14,6 +14,7 @@ return {
             {
                 mode = { "n", "v" },
                 { "<leader>g", group = "git" },
+                { "<leader>gd", group = "diffview" },
                 { "<leader>t", group = "toggle" },
                 { "<leader>c", group = "code" },
                 { "<leader>f", group = "file/find" },

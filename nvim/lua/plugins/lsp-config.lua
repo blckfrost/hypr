@@ -103,8 +103,8 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
             cmd = { "gopls" },
+            root_markers = { "go.work", "go.mod", ".git" },
             filetypes = { "go", "gomod", "gowork", "gotmpl" },
-
             settings = {
                 gopls = {
                     completeUnimported = true,
@@ -217,6 +217,28 @@ return {
                     return "  ", "String"
                 end,
             },
+
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = " ",
+                    [vim.diagnostic.severity.WARN] = " ",
+                    [vim.diagnostic.severity.INFO] = "󰋼 ",
+                    [vim.diagnostic.severity.HINT] = "󰌵 ",
+                },
+
+                texthl = {
+                    [vim.diagnostic.severity.ERROR] = "Error",
+                    [vim.diagnostic.severity.WARN] = "Error",
+                    [vim.diagnostic.severity.HINT] = "Hint",
+                    [vim.diagnostic.severity.INFO] = "Info",
+                },
+                numhl = {
+                    [vim.diagnostic.severity.ERROR] = "",
+                    [vim.diagnostic.severity.WARN] = "",
+                    [vim.diagnostic.severity.HINT] = "",
+                    [vim.diagnostic.severity.INFO] = "",
+                },
+            },
             update_in_insert = false,
             severity_sort = true,
             underline = true,
@@ -242,13 +264,6 @@ return {
             vim.keymap.set("n", "<Space>ih", function()
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
             end, { desc = "Toggle Inlay Hints" })
-        end
-
-        -- Diagnostic symbols in the sign column (gutter)
-        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-        for severity, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. severity:sub(1, 1) .. severity:sub(2):lower()
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
     end,
 }

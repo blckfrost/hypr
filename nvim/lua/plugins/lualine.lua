@@ -30,7 +30,15 @@ return {
             options = {
                 icons_enabled = true,
                 globalstatus = vim.o.laststatus == 3,
-                theme = "auto",
+                -- theme = "auto",
+                theme = {
+                    normal = {
+                        c = { fg = "#b4befe" },
+                    },
+                    inactive = {
+                        c = { fg = "#b4befe" },
+                    },
+                },
                 component_separators = "",
                 section_separators = "",
                 always_divide_middle = true,
@@ -45,7 +53,12 @@ return {
                 lualine_b = {
                     {
                         "branch",
-                        icon = { "", color = { fg = "#fc5603" } },
+                        -- color #fc5603 reddish
+                        icon = { "", color = { fg = "#b4befe" } },
+                        color = { fg = "#cdd6f4" },
+                        padding = 1,
+
+                        git_branch = "",
                     },
                     {
                         virtual_env,
@@ -55,42 +68,43 @@ return {
                 lualine_c = {
                     {
                         "diagnostics",
+                        padding = 1,
                         update_in_insert = true,
-                        symbols = { error = " ", warn = " ", hint = " ", info = " " },
+                        symbols = {
+                            error = " ",
+                            warn = " ",
+                            info = " ",
+                            hint = " ",
+                        },
                         diagnostics_color = {
                             error = { fg = "red" },
                         },
                     },
+                    "%=",
                     {
                         "filetype",
                         icon_only = true,
-                        separator = "",
+                        separator = ".",
                         padding = { left = 1, right = 0 },
+                        colored = false,
                     },
                     {
+
                         "filename",
-                        symbols = { readonly = " 󰌾 " },
-                        path = 4,
+                        file_status = true,
+                        newfile_status = false,
+                        path = 1,
+                        padding = 1,
+                        color = { fg = "#cdd6f4" },
                     },
 
                     "searchcount",
                 },
                 lualine_x = {
 
-                    -- {
-                    --     function()
-                    --         return require("noice").api.status.command.get()
-                    --     end,
-                    --     cond = function()
-                    --         return package.loaded["noice"]
-                    --             and require("noice").api.status.command.has()
-                    --     end,
-                    -- },
-
                     {
                         lazy_status.updates,
                         cond = lazy_status.has_updates,
-                        -- color = { fg = "#ff9e75" },
                     },
                     {
                         "diff",
@@ -100,6 +114,7 @@ return {
                             modified = { fg = "orange" },
                             removed = { fg = "red" },
                         },
+                        padding = 1,
                     },
 
                     {
@@ -111,7 +126,11 @@ return {
                     -- "fileformat",
                 },
                 lualine_y = {
-                    { "progress", separator = " ", padding = { left = 1, right = 0 } },
+                    {
+                        "progress",
+                        padding = 1,
+                        color = { fg = "#cdd6f4" },
+                    },
                     {
                         "location",
                         icon = { "󰍒", align = "right" },

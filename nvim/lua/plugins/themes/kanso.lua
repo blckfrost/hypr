@@ -15,6 +15,6 @@ return {
             terminalColors = true, -- define vim.g.terminal_color_{0,17}
             theme = "zen", -- Load zen | ink | pearl
         })
-        -- vim.cmd("colorscheme kanso")
+        vim.cmd("colorscheme kanso-zen")
     end,
 }

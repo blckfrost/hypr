@@ -17,6 +17,6 @@ return {
                 strings = "italic",
             },
         })
-        require("black-metal").load()
+        -- require("black-metal").load()
     end,
 }

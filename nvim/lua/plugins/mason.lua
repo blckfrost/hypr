@@ -1,8 +1,8 @@
 return {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     event = "VeryLazy",
     dependencies = {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         "whoIsSethDaniel/mason-tool-installer.nvim",
     },
 
@@ -41,12 +41,14 @@ return {
         mason_tool.setup({
             run_on_start = true,
             ensure_installed = {
-                "stylua", -- lua formatter
-                "isort", -- formatter for sorting import python
-                "black", -- formatter for python
-                "prettier", -- formatter
-                "flake8", -- linting for python
-                "beautysh", -- for bash
+                "stylua",
+                "isort",
+                "black",
+                "prettier",
+                "flake8",
+                "beautysh",
+                "goimports",
+                "gofumpt",
             },
         })
     end,
