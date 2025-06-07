@@ -15,6 +15,8 @@ return {
             },
             view = {
                 adaptive_size = true,
+                relativenumber = true,
+                side = "right",
             },
 
             filters = {
@@ -26,6 +28,16 @@ return {
                 no_bookmark = false,
                 custom = {},
                 exclude = {},
+            },
+            diagnostics = {
+                enable = true,
+                show_on_dirs = true,
+                icons = {
+                    error = " ",
+                    warning = " ",
+                    info = " ",
+                    hint = " ",
+                },
             },
 
             renderer = {

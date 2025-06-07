@@ -1,7 +1,7 @@
 local keymap = vim.keymap -- for conciseness
 local opts = { silent = true }
 
--- Disable the arrow keys
+-- Disable the arrow keys - dont use anymore lol
 -- keymap.set("n", "<Left>", ":echo 'use h'<CR>")
 -- keymap.set("n", "<Right>", ":echo 'use l'<CR>")
 -- keymap.set("n", "<Up>", ":echo 'use k'<CR>")
@@ -35,7 +35,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "x", '"_x')
 
 --
-keymap.set("n", "<C-/>", "<cmd>noh<CR>")
+keymap.set("n", "<Esc>", "<cmd>noh<CR>")
 
 --  Lazy UI and Mason UI
 keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Open Lazy UI" })

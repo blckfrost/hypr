@@ -9,12 +9,17 @@ return {
     },
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        enabled = false,
+        enabled = true,
         opts = {},
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
         config = function()
             require("render-markdown").enable()
-            vim.keymap.set("n", "<leader>mar", "<cmd>RenderMarkdown toggle<CR>", { desc = "[M][a]arkdown [R]ender" })
+            vim.keymap.set(
+                "n",
+                "<leader>mar",
+                "<cmd>RenderMarkdown toggle<CR>",
+                { desc = "[M][a]arkdown [R]ender" }
+            )
         end,
     },
 }

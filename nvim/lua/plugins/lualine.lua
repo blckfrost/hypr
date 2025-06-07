@@ -22,7 +22,7 @@ end
 
 return {
     "nvim-lualine/lualine.nvim",
-    event = { "BufReadPost", "BufAdd", "BufNewFile" },
+    event = "VeryLazy",
     config = function()
         local lualine = require("lualine")
         local lazy_status = require("lazy.status")
@@ -55,10 +55,8 @@ return {
                         "branch",
                         -- color #fc5603 reddish
                         icon = { "", color = { fg = "#b4befe" } },
-                        color = { fg = "#cdd6f4" },
+                        color = { fg = "#cdd6f4", gui = "italic,bold" },
                         padding = 1,
-
-                        git_branch = "",
                     },
                     {
                         virtual_env,
@@ -121,6 +119,7 @@ return {
                         "macro_recording",
                         fmt = show_macro_recording,
                         color = { fg = "red" },
+                        icon = { "󰑋" },
                     },
                     -- "encoding",
                     -- "fileformat",

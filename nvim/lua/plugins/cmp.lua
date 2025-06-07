@@ -95,6 +95,7 @@ return {
                         nvim_lua = "[Lua]",
                         path = "[Path]",
                         latex_symbols = "[Latex]",
+                        copilot = "[Copilot]",
                     },
                     maxwidth = 40,
                     ellipsis_char = "...",

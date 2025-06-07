@@ -1,7 +1,7 @@
 return {
 
     "romgrk/barbar.nvim",
-    event = { "BufReadPost", "BufAdd", "BufNewFile" },
+    event = { "VeryLazy" },
     config = function()
         local bar = require("barbar")
         local diagnostic = vim.diagnostic --for cleanliness

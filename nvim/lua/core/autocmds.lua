@@ -55,3 +55,10 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
         require("lint").try_lint()
     end,
 })
+
+-- Shows errors and warnings in a flotaing window
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     callback = function()
+--         vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+--     end,
+-- })

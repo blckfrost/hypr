@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "VeryLazy",
     config = function()
         require("nvim-treesitter.configs").setup({
             textobjects = {
@@ -86,22 +87,22 @@ return {
                     set_jumps = true, -- whether to set jumps in jumplist
                     goto_next_start = {
                         ["]f"] = "@function.outer",
-                        ["]]"] = "@class.outer",
+                        -- ["]]"] = "@class.outer",
                         ["]a"] = "@parameter.inner",
                     },
                     goto_next_end = {
                         ["]F"] = "@function.outer",
-                        ["[["] = "@class.outer",
+                        -- ["[["] = "@class.outer",
                         ["]A"] = "@parameter.inner",
                     },
                     goto_previous = {
                         ["[f"] = "@function.outer",
-                        ["[["] = "@class.outer",
+                        -- ["[["] = "@class.outer",
                         ["[a"] = "@parameter.inner",
                     },
                     goto_previous_end = {
                         ["[F"] = "@function.outer",
-                        ["[]"] = "@class.outer",
+                        -- ["[]"] = "@class.outer",
                         ["[A"] = "@parameter.inner",
                     },
                 },

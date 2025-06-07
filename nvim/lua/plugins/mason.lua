@@ -20,6 +20,7 @@ return {
                 },
                 border = "rounded",
             },
+            log_level = vim.log.levels.INFO,
         })
 
         mason_lspconfig.setup({

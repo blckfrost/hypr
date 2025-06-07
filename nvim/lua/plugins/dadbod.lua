@@ -1,5 +1,6 @@
 return {
     "kristijanhusak/vim-dadbod-ui",
+    enabled = false,
     dependencies = {
         { "tpope/vim-dadbod", lazy = true },
         { "kristijanhusak/vim-dadbod-completion", lazy = true },
@@ -10,7 +11,9 @@ return {
                 sources = { { name = "vim-dadbod-completion" } },
             })
         end
-        vim.g.db_ui_save_location = vim.fn.stdpath("core") .. require("plenary.path").path.sep .. "db_ui"
+        vim.g.db_ui_save_location = vim.fn.stdpath("core")
+            .. require("plenary.path").path.sep
+            .. "db_ui"
         vim.api.nvim_create_autocmd("FileType", {
             pattern = {
                 "sql",

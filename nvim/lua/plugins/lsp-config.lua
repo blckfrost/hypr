@@ -23,9 +23,6 @@ return {
             opts.desc = "Show buffer diagnostics"
             keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show diagnostics for file
 
-            opts.desc = "Show line diagnostics"
-            keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- shows diagnostics for a line
-
             opts.desc = "Show LSP references"
             keymap.set("n", "<leader>lR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
@@ -34,6 +31,9 @@ return {
 
             opts.desc = "Show lsp definitions"
             keymap.set("n", "<leader>lD", "<cmd>Lspsaga goto_definition <cr>", opts)
+
+            opts.desc = "Show line diagnostics"
+            keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- shows diagnostics for a line
 
             opts.desc = "Go to previous diagnostic"
             keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
@@ -72,6 +72,9 @@ return {
             "rust_analyzer",
             "texlab",
             "jsonls",
+            "sqlls",
+            "postgres_lsp",
+            "prismals",
         }
 
         for _, lsp in ipairs(servers) do
@@ -203,11 +206,13 @@ return {
         })
 
         vim.diagnostic.config({
-            virtual_text = { spacing = 1, prefix = "💀" },
-            -- virtual_text = { spacing = 1, prefix = "󰊠 " },
-
+            virtual_text = { spacing = 1, prefix = "󰊠 " },
+            update_in_insert = false,
+            severity_sort = true,
+            underline = true,
             float = {
                 focusable = true,
+                spacing = 2,
                 style = "minimal",
                 border = "rounded",
                 source = "if_many",
@@ -223,7 +228,8 @@ return {
                     [vim.diagnostic.severity.ERROR] = " ",
                     [vim.diagnostic.severity.WARN] = " ",
                     [vim.diagnostic.severity.INFO] = "󰋼 ",
-                    [vim.diagnostic.severity.HINT] = "󰌵 ",
+                    [vim.diagnostic.severity.HINT] = " ",
+                    hint = " ",
                 },
 
                 texthl = {
@@ -239,19 +245,13 @@ return {
                     [vim.diagnostic.severity.INFO] = "",
                 },
             },
-            update_in_insert = false,
-            severity_sort = true,
-            underline = true,
         })
-        vim.lsp.handlers["textDocument/publishDiagnostics"] =
-            vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-                underline = true,
-                virtual_text = { spacing = 1, prefix = "💀" },
-            })
+
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
             border = "rounded",
             title = "hover",
         })
+
         vim.lsp.handlers["textDocument/signatureHelp"] =
             vim.lsp.with(vim.lsp.handlers.signature_help, {
                 border = "single",

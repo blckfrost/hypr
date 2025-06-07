@@ -11,7 +11,12 @@ return {
         },
         cmdline = {
             format = {
-                search_replace = { kind = "search", pattern = "^:%%s/", icon = "󰛔", lang = "regex" },
+                search_replace = {
+                    kind = "search",
+                    pattern = "^:%%s/",
+                    icon = "󰛔",
+                    lang = "regex",
+                },
             },
         },
         lsp = {

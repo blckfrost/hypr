@@ -1,6 +1,5 @@
 return {
     "stevearc/conform.nvim",
-
     config = function()
         local conform = require("conform")
         local keymap = vim.keymap
