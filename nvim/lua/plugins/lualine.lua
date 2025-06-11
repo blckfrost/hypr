@@ -30,15 +30,15 @@ return {
             options = {
                 icons_enabled = true,
                 globalstatus = vim.o.laststatus == 3,
-                -- theme = "auto",
-                theme = {
-                    normal = {
-                        c = { fg = "#b4befe" },
-                    },
-                    inactive = {
-                        c = { fg = "#b4befe" },
-                    },
-                },
+                theme = "auto",
+                -- theme = {
+                --     normal = {
+                --         c = { fg = "#b4befe" },
+                --     },
+                --     inactive = {
+                --         c = { fg = "#b4befe" },
+                --     },
+                -- },
                 component_separators = "",
                 section_separators = "",
                 always_divide_middle = true,

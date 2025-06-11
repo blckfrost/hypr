@@ -74,6 +74,8 @@ vim.o.timeoutlen = 300
 
 -- Whitespace chars
 vim.opt.listchars = { tab = "» ", trail = "~", space = "·", eol = "↵" }
+vim.opt.fillchars = { eob = " " } -- Use space instead of ~
+
 vim.opt.whichwrap = "<,>,h,l,[,]"
 
 -- faster completion

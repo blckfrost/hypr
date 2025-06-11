@@ -2,7 +2,7 @@ return {
     {
         "zbirenbaum/copilot-cmp",
         event = "Insertenter",
-        enabled = true,
+        enabled = false,
         config = function()
             require("copilot_cmp").setup()
         end,
@@ -12,6 +12,7 @@ return {
         cmd = "Copilot",
         build = ":Copilot auth",
         event = "Insertenter",
+        enabled = false,
         config = function()
             require("copilot").setup({
                 panel = { enabled = false },
