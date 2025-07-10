@@ -12,9 +12,10 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
+        "format": "{capacity}% {icon}",
         "format-time": "{H}hr & {m}min",
-        "format-charging": "󰂄 {capacity}%",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄 ",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 1,
         "tooltip-format-charging": "{time} (󰢟 charging), at {capacity}%",

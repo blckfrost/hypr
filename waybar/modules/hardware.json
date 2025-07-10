@@ -7,7 +7,7 @@
 
     "cpu": {
         "format": " {usage}%",
-        "on-click": "kitty -e htop",
+        "on-click": "kitty -e btop",
         "interval": 1
     },
 
@@ -24,6 +24,12 @@
 
     "group/hardware": {
         "orientation": "horizontal",
-        "modules": ["disk", "memory", "cpu"]
+
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": ["memory", "cpu", "disk"]
     }
 }

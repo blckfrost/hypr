@@ -1,8 +1,13 @@
 {
     "clock": {
-        "format": "󰥔 {:%H:%M}",
+        "format": "󰥔 {:%H:%M %p}",
         "interval": 1,
         "format-alt": "󰥔  {:%H:%M   %Y, %d %B, %a}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#f8f8'><b>{}</b></span>"
+            }
+        }
     }
 }

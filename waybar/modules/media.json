@@ -1,6 +1,7 @@
 {
     "custom/media": {
-        "format": "{icon} {}",
+        "format": "{icon} {text}",
+        //"format": "󰄾 {0} {1} 󰄽",
         "escape": true,
         "return-type": "json",
         "max-length": 40,
@@ -8,40 +9,22 @@
             "spotify": " ",
             "default": " "
         },
-        "exec": "~/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
-        "on-click": "playerctl --player spotify play-pause",
-        "on-scroll-up": "playerctl --player spotify next",
-        "on-scroll-down": "playerctl --player spotify next"
-    },
-
-    "mpris": {
-        "format": "{player_icon} {dynamic}",
-        "format-paused": "{status_icon} {player_icon} <i>{dynamic}</i>",
-        "max-length": 40,
-        "player-icons": {
-            "default": " ",
-            "mpd": " ",
-            "firefox": " ",
-            "mpv": " ",
-            "spotify": " "
-        },
-        "status-icons": {
-            "playing": " ",
-            "paused": "",
-            "stopped": ""
-        }
+        "exec": "python ~/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next"
     },
 
     "custom/spotify": {
-        "exec": "~/.config/waybar/scripts/mediaplayer --player spotify",
+        "exec": "python ~/.config/waybar/scripts/mediaplayer.py --player spotify",
         "format": " {}",
         "rotate": 0,
         "return-type": "json",
         "on-click": "playerctl play-pause --player spotify",
-        "on-click-right": "playerctl next --player spotify",
-        "on-click-middle": "playerctl previous --player spotify",
-        "on-scroll-up": "volumecontrol.sh -p spotify i",
-        "on-scroll-down": "volumecontrol.sh -p spotify d",
+        "on-click-right": "playerctl stop --player spotify",
+        "on-scroll-up": "playerctl previous --player spotify",
+        "on-scroll-down": "playerctl next --player spotify",
         "max-length": 25,
         "escape": true,
         "tooltip": true

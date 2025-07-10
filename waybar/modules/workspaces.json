@@ -1,23 +1,20 @@
 {
     "hyprland/workspaces": {
-        "format": "",
+        "format": "{icon}",
         "disable-scroll": false,
         "on-scroll-up": "hyprctl dispatch workspace -1",
         "on-scroll-down": "hyprctl dispatch workspace +1",
 
         "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": []
+            "*": [1, 2, 3]
         },
 
         "format-icons": {
-            "urgent": "",
-            "active": "󰮯",
+            "urgent": " ",
+            "active": " ",
             "default": "󰊠",
             "persistent": "󰊠"
         },
-
         "sort-by-number": true
     }
 }

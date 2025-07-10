@@ -39,7 +39,7 @@ window#waybar.bottom .modules-center {
 #workspaces button {
     margin: 2px;
     padding: 1px;
-    background: @surface_container_highest;
+    /* background: @surface_container_highest; */
     color: @on_surface;
     border-radius: 40px;
     transition: all 0.3s ease-in-out;
@@ -57,10 +57,13 @@ window#waybar.bottom .modules-center {
 }
 
 #workspaces button.urgent {
-    background-color: @error;
+    background-color: @on_error;
     opacity: 0.8;
 }
 
+#workspaces button.empty.active {
+    background-color: @on_error;
+}
 
 #custom-media.custom-spotify {
     color: #66cc99;
@@ -85,7 +88,7 @@ window#waybar.bottom .modules-center {
 #mpris,
 #tray {
     color: @on_surface;
-    padding: 0px 7px 0px 7px;
+    padding: 0px 6px 0px 6px;
     border-radius: 8px;
     margin: 2px;
     background-color: @surface;
@@ -101,8 +104,10 @@ window#waybar.bottom .modules-center {
 }
 
 #cpu,
+#disk,
 #memory {
     margin-left: 8px;
+
 }
 
 #audio {
@@ -126,15 +131,26 @@ window#waybar.bottom .modules-center {
     color: @color14;
 }
 
-#battery.critical,
-#battery.warning,
-#battery.full,
-#battery.plugged {
-    color: @color13;
+#battery.critical {
+    color: @on_error;
+}
+
+#battery.discharged {
+    color: green;
+}
+
+
+#battery.full {
+    color: lightblue;
+}
+
+#battery.warning {
+    color: @on_error;
+    background: red;
 }
 
 #battery {
-    color: @color14;
+    color: @on_surface;
 }
 
 #mpd {

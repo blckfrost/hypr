@@ -3,7 +3,7 @@
         "format-wifi": "{icon} {essid}",
         "rotate": 0,
         "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-        "format-ethernet": "󰈁 {ifname}",
+        "format-ethernet": " {ifname}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
         "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",

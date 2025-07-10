@@ -1,6 +1,6 @@
 {
     "hyprland/window": {
-        "format": "{title}",
+        "format": "{}",
         "max-length": 40,
         "separate-outputs": true,
         "rewrite": {
@@ -9,7 +9,7 @@
             "(.*) - zsh": "> [$1]",
             "^.*~$": "󰄛 Kitty $1",
             "(.*) - mpv": "Mpv",
-            "^.*v( .*|$)": " $1",
+            "(.*)nvim": " $1",
             "^.*zathura.*": "Zathura $1",
             "(.*)Visual Studio Code": "Code 󰨞"
         }

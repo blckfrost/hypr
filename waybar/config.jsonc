@@ -3,8 +3,9 @@
         "position": "top",
         "layer": "top",
         "height": 0,
+        "mode": "dock",
         "reload_style_on_change": true,
-        "modules-left": ["clock", "group/laptop", "mpris"],
+        "modules-left": ["clock", "group/laptop", "custom/media"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["tray", "group/audio", "group/hardware", "network", "bluetooth", "custom/swaync"],
         "include": [
