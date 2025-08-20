@@ -8,4 +8,3 @@ spicetify apply -q -n
 # set gtk theme
 gsettings set org.gnome.desktop.interface gtk-theme ""
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
-

@@ -33,12 +33,10 @@ notify_view() {
     fi
 }
 
-
-
 # countdown
 countdown() {
     for sec in $(seq $1 -1 1); do
-        notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png "Taking shot in : $sec"
+        notify-send -h string:x-canonical-private-synchronous:shot-notify -t 5000 -i "$iDIR"/timer.png "Taking shot in : $sec"
         sleep 1
     done
 }
@@ -88,11 +86,10 @@ shotactive() {
 
 shotswappy() {
     tmpfile=$(mktemp)
-    grim -g "$(slurp)" - >"$tmpfile" &&  notify_view "swappy"
+    grim -g "$(slurp)" - >"$tmpfile" && notify_view "swappy"
     swappy -f - <"$tmpfile"
     rm "$tmpfile"
 }
-
 
 if [[ ! -d "$dir" ]]; then
     mkdir -p "$dir"
